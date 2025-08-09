@@ -119,13 +119,13 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
 
     return (
         <Form {...form}>
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                <div className="flex flex-col space-y-6">
+            <form onSubmit={handleSubmit} noValidate>
+                <div className="flex flex-col">
                     <FormField
                         control={control}
                         name="name.firstName"
                         render={({ field }) => (
-                            <FormItem className="space-y-2">
+                            <FormItem >
                                 <FormLabel>
                                     First name{" "}
                                     <span className="text-destructive">*</span>
@@ -137,7 +137,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                                         {...field}
                                     />
                                 </FormControl>
-                                <FormMessage className="mt-1" />
+                                <FormMessage/>
                             </FormItem>
                         )}
                     />
@@ -146,7 +146,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                         control={control}
                         name="name.middleNamesText"
                         render={({ field }) => (
-                            <FormItem className="space-y-2">
+                            <FormItem >
                                 <FormLabel>Middle names</FormLabel>
                                 <FormControl>
                                     <Input
@@ -155,7 +155,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                                         {...field}
                                     />
                                 </FormControl>
-                                <FormMessage className="mt-1" />
+                                <FormMessage/>
                             </FormItem>
                         )}
                     />
@@ -164,7 +164,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                         control={control}
                         name="name.lastName"
                         render={({ field }) => (
-                            <FormItem className="space-y-2">
+                            <FormItem >
                                 <FormLabel>
                                     Last name{" "}
                                     <span className="text-destructive">*</span>
@@ -176,7 +176,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                                         {...field}
                                     />
                                 </FormControl>
-                                <FormMessage className="mt-1" />
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -187,7 +187,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                         control={control}
                         name="gender"
                         render={({ field }) => (
-                            <FormItem className="w-full space-y-2">
+                            <FormItem className="w-full">
                                 <FormLabel>
                                     Gender{" "}
                                     <span className="text-destructive">*</span>
@@ -211,7 +211,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                                         </SelectItem>
                                     </SelectContent>
                                 </Select>
-                                <FormMessage className="mt-1" />
+                                <FormMessage />
                             </FormItem>
                         )}
                     />
@@ -220,7 +220,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                         control={control}
                         name="age"
                         render={({ field }) => (
-                            <FormItem className="space-y-2">
+                            <FormItem >
                                 <FormLabel>
                                     Age{" "}
                                     <span className="text-destructive">*</span>
@@ -236,7 +236,7 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                                         {...field}
                                     />
                                 </FormControl>
-                                <FormMessage className="mt-1" />
+                                <FormMessage/>
                             </FormItem>
                         )}
                     />
