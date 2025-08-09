@@ -25,6 +25,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { GenderEnum } from "@/lib/api/common";
+import { navigate } from "vike/client/router";
 
 const schema = z.object({
     name: z.object({
@@ -106,9 +107,8 @@ export const PatientForm: React.FC<Props> = ({ initial, onSubmit }) => {
                 isEdit ? "Patient details updated" : "Patient created"
             );
 
-            if (!isEdit) {
-                window.location.href = "/patients";
-            }
+            if (!isEdit) navigate('/consultations')
+
         } catch {
             toast.error("Something went wrong");
         }

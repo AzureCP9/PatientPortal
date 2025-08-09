@@ -24,6 +24,7 @@ import {
     AlertDialogCancel,
     AlertDialogAction,
 } from "@/components/ui/alert-dialog";
+import { reload } from "vike/client/router";
 
 const Page = () => {
     const { consultation, patients } = useData<PageData>();
@@ -39,7 +40,7 @@ const Page = () => {
             setIsCancelling(true);
             await cancelConsultationAsync(consultation.id);
             toast.success("Consultation cancelled");
-            window.location.reload();
+            await reload();
         } catch (err) {
             toast.error((err as Error).message ?? "Failed to cancel");
         } finally {

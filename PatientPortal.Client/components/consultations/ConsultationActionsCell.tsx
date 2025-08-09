@@ -24,6 +24,7 @@ import {
     AlertDialogAction,
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
+import { reload } from 'vike/client/router'
 
 const ConsultationActionsCell: React.FC<{ c: ConsultationResponseDto }> = ({
     c,
@@ -40,7 +41,7 @@ const ConsultationActionsCell: React.FC<{ c: ConsultationResponseDto }> = ({
             setIsCancelling(true);
             await cancelConsultationAsync(c.id);
             toast.success("Consultation cancelled");
-            window.location.reload();
+            await reload();
         } catch (err) {
             toast.error((err as Error).message ?? "Failed to cancel");
         } finally {

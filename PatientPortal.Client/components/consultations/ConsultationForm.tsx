@@ -24,6 +24,7 @@ import { uploadConsultationAttachmentAsync } from "@/lib/api/consultations";
 import { getMimeInfo } from "@/lib/models/common/mimeType";
 import { FormMultiUpload } from "../ui/Form/FormMultiUpload";
 import { PatientSelect } from "../patients/PatientSelect";
+import { navigate } from "vike/client/router";
 
 const schema = z.object({
     patientId: z.string().min(1, "Required."),
@@ -105,7 +106,7 @@ export const ConsultationForm: React.FC<Props> = ({
             toast.success(
                 isEdit ? "Consultation updated" : "Consultation scheduled"
             );
-            if (!isEdit) window.location.href = "/consultations";
+            if (!isEdit) navigate('/consultations')
         } catch (error) {
             toast.error(
                 error instanceof Error ? error.message : "Something went wrong"
